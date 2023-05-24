@@ -1,0 +1,95 @@
+.parent-container {
+    background-color: beige;
+    border: 2px solid black;
+    width: 75vw;
+    height: 175vh;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    /*  causes absolute container to position inside parent container */
+}
+
+.child {
+    padding: 25px;
+}
+
+.static {
+    border: 2px solid red;
+    background-color: red;
+    /* position: static; */
+    /* top, bottom, left, right have no affect on Static Position */
+}
+
+.relative {
+    border: 2px solid blueviolet;
+    background-color: blueviolet;
+    /* position: relative; */
+    /* top, bottom, left, right will move relative to it's static position */
+    /* DO NOT USE IT, it's too manual */
+}
+
+.absolute {
+    border: 2px solid green;
+    background-color: green;
+    bottom: 0;
+    /* position: absolute;
+    top: 0; */
+    /* will take out of document flow */
+    /* will find the parent that is position relative, absolute, fixed */
+    /* best used for child elements */
+}
+
+.fixed {
+    border: 2px solid teal;
+    background-color: teal;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    /* will take out of document flow */
+    /* ignores parent */
+    /* t, b, l, r used to position relative to viewport */
+}
+
+.sticky {
+    border: 2px solid gray;
+    background-color: gray;
+    position: sticky;
+    top: 0;
+    /* Stays in document flow but with t, b, l, r */
+}
+
+
+/* 
+    CSS Position Property
+
+    ? Static
+    * default
+    * positioned in relation to elements
+    * top, bottom, left, right, z-index have NO effect
+
+    ? Relative
+    * just like static
+    * can be changed using top, bottom, left, right, z-index
+    * values are relative to its original static position
+    ! DON'T USE IT! Breaks the flow!
+
+    ? Absolute
+    * removes element from the flow
+    * positions it relative to parent container
+    * if parent is static, it will move outside of parent container
+    * if parent is relative, it will move within parent container
+    * positioning defined by top, bottom, left, right, z-index
+
+    ? Fixed
+    * like absolute
+    * positioned to viewport
+    * doesn't move when scrolling
+    * positioning defined by top, bottom, left, right, z-index
+
+    ? Sticky
+    * mix of relative and fixed
+    * relative to the flow
+    * position definition used for when you start scrolling
+    * stays fixed when scrolling; relative when stationary
+
+*/
